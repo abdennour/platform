@@ -37,6 +37,7 @@
   * ```sudo vi /var/lib/pgsql/9.4/data/pg_hba.conf```
   * Add the following line to the 'IPv4 local connections':
   * host    all             all             10.10.10.2/32         md5
+   ( If there is already a line below 'IPv4 local connections' section , just change `ident` by `md5` & modify the `127.0.0.1` by server IP where Mattermost application deployed (Assume : `10.10.10.2`) )
 1. Reload Postgres database:
   * ```sudo systemctl reload postgresql-9.4.service```
 1. Attempt to connect with the new created user to verify everything looks good:
